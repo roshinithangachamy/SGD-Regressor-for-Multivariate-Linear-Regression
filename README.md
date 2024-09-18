@@ -18,8 +18,8 @@ To write a program to predict the price of the house and number of occupants in 
 
 ## Program:
 ```
-Developed by: 
-RegisterNumber:  
+Developed by: T.Roshini
+RegisterNumber:  212223230175
 ```
 ```
 import numpy as np
