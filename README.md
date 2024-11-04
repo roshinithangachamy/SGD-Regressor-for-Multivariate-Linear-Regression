@@ -32,7 +32,8 @@ from sklearn.preprocessing import StandardScaler
 data=fetch_california_housing()
 X = data.data[:, :3]
 Y=np.column_stack((data.target, data.data[:,6]))
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=42)
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,
+random_state=42)
 scaler_Y=StandardScaler()
 scaler_X=StandardScaler()
 
