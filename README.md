@@ -8,13 +8,12 @@ To write a program to predict the price of the house and number of occupants in 
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. import the libraries
+1. Use the California Housing dataset from Scikit-Learn, which contains information on house prices and other housing-related features.
+2. Split X and Y into training and testing sets using an 80-20 split. The training set will be used to fit the model, while the test set will evaluate its performance.
+3. Since SGD is sensitive to feature scales, use StandardScaler to standardize both X and Y.
+4. Set up an SGDRegressor with parameters like max_iter=1000 and tol=1e-3.
+5. Use the trained model to make predictions on the standardized test set (X_test).
 
-2. initialize the scaler of X and Y
-
-3. train and test the data of X and Y
-
-4. Print the Mean Square Error
 
 ## Program:
 ```
@@ -46,24 +45,20 @@ sgd=SGDRegressor(max_iter=1000,tol=1e-3)
 multi_output_sgd=MultiOutputRegressor(sgd)
 multi_output_sgd.fit(X_train,Y_train)
 
-```
-```
-
 Y_pred=multi_output_sgd.predict(X_test)
 Y_pred=scaler_Y.inverse_transform(Y_pred)
 Y_test=scaler_Y.inverse_transform(Y_test)
 mse=mean_squared_error(Y_test,Y_pred)
 print("Mean Squared Error:",mse)
-```
-```
 print("\nPredictions:\n",Y_pred[:5])
 ```
 ## Output:
-![Screenshot 2024-09-18 105718](https://github.com/user-attachments/assets/e17d516c-a13d-482c-8c78-b06ac20f163e)
 
-![Screenshot 2024-09-18 105728](https://github.com/user-attachments/assets/360fe400-1a98-4834-82ea-96aad3d38e8a)
+#### Head
+![365528873-827855e9-aaab-4e42-adf9-c40d2a77457b](https://github.com/user-attachments/assets/50ab4638-e805-4801-bafe-179ac0019163)
 
-![Screenshot 2024-09-18 105734](https://github.com/user-attachments/assets/e602f676-5efc-438f-9359-5e7be1f7046f)
+#### Prediction
+![365528912-6f9060e1-611a-4e95-a071-e8bff9923206](https://github.com/user-attachments/assets/4d933d29-535d-4108-b4a0-8597bf72d9f6)
 
 ## Result:
 Thus the program to implement the multivariate linear regression model for predicting the price of the house and number of occupants in the house with SGD regressor is written and verified using python programming.
